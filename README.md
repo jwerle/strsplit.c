@@ -27,7 +27,7 @@ main (void) {
 	char **parts = calloc(1, sizeof(char));
 	size_t size = strsplit(str, parts, "\n");
 	int i = 0;
-	for (; i < size); ++i) {
+	for (; i < size; ++i) {
 		printf("%s\n", parts[i]);
 	}
 
