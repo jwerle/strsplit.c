@@ -9,7 +9,8 @@ int
 strsplit (char *str, char *parts[], char *delimiter) {
   char *pch;
   int i = 0;
-  pch = strtok(str, delimiter);
+  char *tmp = strdup(str);
+  pch = strtok(tmp, delimiter);
 
   parts[i++] = strdup(pch);
 
@@ -19,6 +20,7 @@ strsplit (char *str, char *parts[], char *delimiter) {
     parts[i++] = strdup(pch);
   }
 
+  free(tmp);
   free(pch);
   return i;
 }
