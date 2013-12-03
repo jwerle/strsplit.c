@@ -6,7 +6,7 @@
 #include <string.h>
 
 int
-strsplit (char *str, char *parts[], char *delimiter) {
+strsplit (const char *str, char *parts[], const char *delimiter) {
   char *pch;
   int i = 0;
   char *tmp = strdup(str);
