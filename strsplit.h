@@ -1,6 +1,6 @@
 
-#ifndef __STR_SPLIT_H__
-#define __STR_SPLIT_H__ 1
+#ifndef STRSPLIT_H
+#define STRSPLIT_H 1
 
 int
 strsplit (const char *, char *[], const char *);
