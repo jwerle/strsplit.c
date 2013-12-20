@@ -1,5 +1,5 @@
 {
-  "name": "strsplit.h",
+  "name": "strsplit",
   "version": "0.0.1",
   "repo": "jwerle/strsplit.h",
   "description": "Split a string into a char array by a given delimiter",
