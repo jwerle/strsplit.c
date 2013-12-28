@@ -1,4 +1,4 @@
-strsplit.h
+strsplit.c
 ==========
 
 Split a string into a char array by a given delimiter
@@ -6,7 +6,7 @@ Split a string into a char array by a given delimiter
 ## install
 
 ```sh
-$ clib install jwerle/strsplit.h
+$ clib install jwerle/strsplit.c
 ```
 
 ## usage
