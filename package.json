@@ -7,6 +7,6 @@
   "license": "MIT",
   "src": ["strsplit.h", "strsplit.c"],
   "dependencies": {
-    "stephenmathieson/str-copy.c": "*"
+    "strdup": "0.0.0"
   }
 }
