@@ -17,3 +17,6 @@
 *.out
 *.app
 strsplit-test
+
+# deps
+deps/
