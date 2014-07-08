@@ -1,12 +1,19 @@
 
-SRC := strsplit.c
-SRC += deps/*/*.c
+SRC = strsplit.c
+DEPS = $(wildcard deps/*/*.c)
+OBJS = $(SRC:.c=.o) $(DEPS:.c=.o)
+CFLAGS = -std=c99 -Wall -Wextra -Ideps
 
 all: clean test
 
 clean:
-	rm -f strsplit-test
+	rm -f strsplit-test $(OBJS)
 
-test:
-	$(CC) $(SRC) test.c -std=c99 -o strsplit-test -Ideps
+test: test.o $(OBJS)
+	$(CC) $^ -o strsplit-test $(CFLAGS)
 	./strsplit-test
+
+%.o: %.c
+	$(CC) $< -c -o $@ $(CFLAGS)
+
+.PHONY: clean all test
