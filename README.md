@@ -12,7 +12,7 @@ $ clib install jwerle/strsplit.c
 ## usage
 
 ```c
-size_t size = strsplit(str, parts, "\n");
+size_t size = strsplit(char *str, char **parts, char *delimiter);
 ```
 
 ## example
@@ -24,7 +24,7 @@ size_t size = strsplit(str, parts, "\n");
 int
 main (void) {
 	char str[] = "hello\nworld";
-	char **parts = calloc(1, sizeof(char));
+	char *parts[2];
 	size_t size = strsplit(str, parts, "\n");
 	int i = 0;
 	for (; i < size; ++i) {
