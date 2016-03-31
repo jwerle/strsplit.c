@@ -20,6 +20,5 @@ strsplit (const char *str, char *parts[], const char *delimiter) {
   }
 
   free(tmp);
-  free(pch);
   return i;
 }
