@@ -8,18 +8,37 @@ int
 strsplit (const char *str, char *parts[], const char *delimiter) {
   char *pch;
   int i = 0;
-  char *tmp = strdup(str);
-  pch = strtok(tmp, delimiter);
+  char *copy = NULL, *tmp = NULL;
 
-  parts[i++] = strdup(pch);
+  copy = strdup(str);
+  if (! copy)
+    goto bad;
+
+  pch = strtok(copy, delimiter);
+
+  tmp = strdup(pch);
+  if (! tmp)
+    goto bad;
+
+  parts[i++] = tmp;
 
   while (pch) {
     pch = strtok(NULL, delimiter);
     if (NULL == pch) break;
-    parts[i++] = strdup(pch);
+
+    tmp = strdup(pch);
+    if (! tmp)
+      goto bad;
+
+    parts[i++] = tmp;
   }
 
-  free(tmp);
-  free(pch);
+  free(copy);
   return i;
+
+ bad:
+  free(copy);
+  for (int j = 0; j < i; j++)
+    free(parts[j]);
+  return -1;
 }
